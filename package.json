@@ -1,0 +1,25 @@
+{
+  "name": "cheesepets-2.0",
+  "private": true,
+  "description": "A virtual pet game.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "dependencies": {
+    "@reach/router": "^1.2.1",
+    "auth0-js": "^9.10.1",
+    "gatsby": "^2.5.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.4"
+  }
+}
