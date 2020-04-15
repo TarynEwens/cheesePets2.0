@@ -7,15 +7,9 @@
 
 import React from "react"
 import { Link } from "gatsby"
-import { Router } from "@reach/router"
 import { logout, isAuthenticated } from "../utils/auth"
 
 const Navigation = () => {
-
-  const Home = () => <p>Home</p>
-  const MyPet = () => <p>My Pet</p>
-  const Games = () => <p>Games</p>
-  const Settings = () => <p>Settings</p>
 
   if (!isAuthenticated()) {
     console.log('not authenticated');
@@ -48,12 +42,6 @@ const Navigation = () => {
           Log Out
         </a>
     </nav>
-    <Router>
-      <Home path="/" />
-      <MyPet path="/account/" />
-      <Games path="/account/games" />
-      <Settings path="/account/settings" />
-    </Router>
   </>
   )
 }

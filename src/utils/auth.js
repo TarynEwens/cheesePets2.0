@@ -65,6 +65,19 @@ const setSession = (cb = () => {}) => (err, authResult) => {
   }
 }
 
+const setNonProtectedSession = (cb = () => {}) => (err, authResult) => {
+  if (authResult && authResult.accessToken && authResult.idToken) {
+    tokens.idToken = authResult.idToken
+    tokens.accessToken = authResult.accessToken
+
+    auth.client.userInfo(tokens.accessToken, (_err, userProfile) => {
+      user = userProfile
+      window.localStorage.setItem("isLoggedIn", true)
+      cb()
+    })
+  }
+}
+
 export const checkSession = callback => {
   console.log('check session');
   const isLoggedIn = window.localStorage.getItem("isLoggedIn")
@@ -77,8 +90,9 @@ export const checkSession = callback => {
     .map(route => window.location.pathname.includes(route))
     .some(route => route)
   if (isProtectedRoute) {
-    console.log('is protected route');
     auth.checkSession({}, setSession(callback))
+  } else {
+    auth.checkSession({}, setNonProtectedSession(callback))
   }
 }
 

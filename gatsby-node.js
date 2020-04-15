@@ -11,11 +11,6 @@ exports.onCreatePage = async ({ page, actions }) => {
     // Update the page.
     createPage(page)
   }
-
-  if (page.path === `/`) {
-    page.matchPath = `/*`
-    createPage(page)
-  }
 }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
