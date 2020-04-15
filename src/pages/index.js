@@ -1,12 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
+
+import Header from "../components/header"
 
 const Home = () => {
   return (
     <>
+      <Header/>
       <main>
         <p>Hello world!</p>
-        <Link to="/account/">Log in / Sign up</Link>
       </main>
     </>
   )
