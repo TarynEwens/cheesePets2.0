@@ -24,7 +24,9 @@ const auth = isBrowser
   : {}
 
 export const login = () => {
+  console.log('login function');
   if (!isBrowser) {
+    console.log('not is browser');
     return
   }
 
@@ -32,6 +34,7 @@ export const login = () => {
 }
 
 export const logout = () => {
+  console.log('logout function');
   tokens.accessToken = false
   tokens.idToken = false
   user = {}
@@ -43,6 +46,7 @@ export const logout = () => {
 }
 
 const setSession = (cb = () => {}) => (err, authResult) => {
+  console.log('set session');
   if (err) {
     if (err.error === "login_required") {
       login()
@@ -62,7 +66,9 @@ const setSession = (cb = () => {}) => (err, authResult) => {
 }
 
 export const checkSession = callback => {
+  console.log('check session');
   const isLoggedIn = window.localStorage.getItem("isLoggedIn")
+  console.log(isLoggedIn);
   if (isLoggedIn === "false" || isLoggedIn === null) {
     callback()
   }
@@ -71,14 +77,17 @@ export const checkSession = callback => {
     .map(route => window.location.pathname.includes(route))
     .some(route => route)
   if (isProtectedRoute) {
+    console.log('is protected route');
     auth.checkSession({}, setSession(callback))
   }
 }
 
 export const handleAuthentication = () => {
+  console.log('handle authentication')
   auth.parseHash(setSession())
 }
 
 export const getProfile = () => {
+  console.log('get profile')
   return user
 }

@@ -1,24 +1,12 @@
 import React from "react"
-import { Link } from "gatsby"
-import { logout } from "../utils/auth"
+
+import Header from "../components/header"
 
 const Callback = () => {
 return(
 <>
+<Header/>
 <p>Callback</p>
-<nav>
-    <Link to="/">Home</Link>{" "}
-    <Link to="/account/">My Account</Link>{" "}
-    <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-</nav>
 </>
 )}
 
