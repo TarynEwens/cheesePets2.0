@@ -28,7 +28,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "@reach/router": "^1.2.1",
-    "auth0-js": "^9.10.1"
+    "auth0-js": "^9.13.2"
   },
   "devDependencies": {
     "prettier": "^1.18.0",
