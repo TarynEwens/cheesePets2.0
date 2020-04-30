@@ -13,6 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
     "gatsby": "^2.8.5",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-manifest": "^2.1.1",
@@ -26,9 +27,7 @@
     "node-sass": "^4.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "@reach/router": "^1.2.1",
-    "auth0-js": "^9.10.1"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "prettier": "^1.18.0",
