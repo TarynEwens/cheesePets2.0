@@ -1,16 +1,38 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, {useContext} from "react"
+import { Link, navigate } from "gatsby"
+import {FirebaseContext} from "./Firebase"
+
 const Navigation = () => {
+  const {firebase, user} = useContext(FirebaseContext);
+  console.log(firebase, user);
+
+  function handleLogoutClick() {
+    firebase.logout().then(() => navigate('/login'));
+  }
 
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>{" "}
-        <Link to="/account/">My Pet</Link>{" "}
-        <Link to="/account/games/">Games</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>{" "}
-    </nav>
-  </>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/pet">My Pet</Link></li>
+          <li><Link to="/games">Games</Link></li>
+          {(!user || !user.email) &&
+            <li><Link to="/login">Login</Link></li>
+          }
+          {!!user && !!user.email &&
+            <li><button onClick={handleLogoutClick}>Logout</button></li>
+          }
+        </ul>
+      </nav>
+      <div>
+        {!!user && !!user.email &&
+        <div>
+          <p>Hello {user.email}!</p>
+        </div>
+        }
+      </div>
+    </>
   )
 }
 
