@@ -18,7 +18,10 @@ const Navigation = () => {
           <li><Link to="/pet">My Pet</Link></li>
           <li><Link to="/games">Games</Link></li>
           {(!user || !user.email) &&
-            <li><Link to="/login">Login</Link></li>
+            <>
+              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/register">Sign up</Link></li>
+            </>
           }
           {!!user && !!user.email &&
             <li><button onClick={handleLogoutClick}>Logout</button></li>
@@ -31,6 +34,7 @@ const Navigation = () => {
           <p>Hello {user.email}!</p>
         </div>
         }
+        <hr/>
       </div>
     </>
   )
