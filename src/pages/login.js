@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react"
 import {FirebaseContext} from '../components/Firebase';
+import { navigate } from "gatsby"
 
 const Login = () => {
   const [formValues, setFormValues] = useState({email: '', password: ''});
@@ -10,6 +11,9 @@ const Login = () => {
     e.preventDefault();
     firebase.login({email: formValues.email, password: formValues.password}).catch(error => {
       setErrorMessage(error.message);
+    }).then(() => {
+      console.log('navigating to your pet page');
+      navigate('/pet')
     });
   }
 

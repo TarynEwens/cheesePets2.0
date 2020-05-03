@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react"
 import {FirebaseContext} from '../components/Firebase'
+import { navigate } from "gatsby"
 
 const Register = () => {
   const {firebase} = useContext(FirebaseContext);
@@ -30,7 +31,11 @@ const Register = () => {
         password: formValues.password
       }).catch(error => {
         setErrorMessage(error.message);
+      }).then(() => {
+        console.log('navigating to adoption centre');
+        navigate('/adopt')
       });
+
     } else {
       setErrorMessage('Password and confirm password fields must match.')
     }
