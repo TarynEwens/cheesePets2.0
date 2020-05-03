@@ -1,16 +1,28 @@
 import React from "react"
+import { graphql } from "gatsby";
 
-import Header from "../components/header"
-
-const Home = () => {
+const Home = (props) => {
   return (
-    <>
-      <Header/>
-      <main>
-        <p>Hello world!</p>
-      </main>
-    </>
-  )
+    <main>
+      <p>Hello world! This is the home page!</p>
+    </main>
+  );
 }
+
+// export const query = graphql`
+// {
+//   allpets {
+//     edges {
+//       node {
+//         id
+//         energy
+//         fun
+//         happiness
+//         hunger
+//       }
+//     }
+//   }
+// }
+// `
 
 export default Home

@@ -1,59 +1,44 @@
-/**
- * Top navigation component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
-import React from "react"
-import { Link } from "gatsby"
-import { logout, isAuthenticated } from "../utils/auth"
-import { Router } from "@reach/router"
+import React, {useContext} from "react"
+import { Link, navigate } from "gatsby"
+import {FirebaseContext} from "./Firebase"
 
 const Navigation = () => {
-  const Home = () => <p>Home</p>
-  const MyPet = () => <p>My Pet</p>
-  const Settings = () => <p>Settings</p>
-  const Games = () => <p>Games</p>
+  const {firebase, user} = useContext(FirebaseContext);
+  console.log('navigation', user);
 
-  if (!isAuthenticated()) {
-    console.log('not authenticated');
-    return (
-      <nav id="navigation" className="header__nav">
-        <ul id="menu">
-          <li>
-            <Link to="/account/">Log in / Sign up</Link>
-          </li>
-        </ul>
-      </nav>
-    )
+  function handleLogoutClick() {
+    firebase.logout().then(() => navigate('/login'));
   }
 
-  console.log('is authenticated');
   return (
     <>
       <nav>
-        <Link to="/">Home</Link>{" "}
-        <Link to="/account/">My Pet</Link>{" "}
-        <Link to="/account/games/">Games</Link>{" "}
-        <Link to="/account/settings/">Settings</Link>{" "}
-        <a
-          href="#logout"
-          onClick={e => {
-            logout()
-            e.preventDefault()
-          }}
-        >
-          Log Out
-        </a>
-    </nav>
-    <Router>
-      <Home path="/" />
-      <MyPet path="/account/" />
-      <Settings path="/account/settings" />
-      <Games path="/account/games" />
-    </Router>
-  </>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          {(!user || !user.email) &&
+            <>
+              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/register">Sign up</Link></li>
+            </>
+          }
+          {!!user && !!user.email &&
+            <>
+              <li><Link to="/pet">My Pet</Link></li>
+              <li><Link to="/games">Games</Link></li>
+              <li><button onClick={handleLogoutClick}>Logout</button></li>
+            </>
+          }
+        </ul>
+      </nav>
+      <div>
+        {!!user && !!user.email &&
+        <div>
+          <p>Hello {user.username || user.email}!</p>
+        </div>
+        }
+        <hr/>
+      </div>
+    </>
   )
 }
 

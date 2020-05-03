@@ -13,7 +13,11 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
+    "@reach/router": "^1.2.1",
+    "axios": "^0.19.2",
+    "firebase": "^7.14.2",
     "gatsby": "^2.8.5",
+    "gatsby-firesource": "^2.0.3",
     "gatsby-image": "^2.1.2",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.1",
@@ -26,12 +30,9 @@
     "node-sass": "^4.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1",
-    "@reach/router": "^1.2.1",
-    "auth0-js": "^9.10.1"
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.0",
     "cli-glob": "^0.1.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.2",
@@ -40,6 +41,7 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.5.1",
     "gh-pages": "^1.1.0",
+    "prettier": "^1.18.0",
     "remark-cli": "^4.0.0",
     "remark-preset-lint-recommended": "^3.0.1",
     "stylefmt": "^6.0.0",
