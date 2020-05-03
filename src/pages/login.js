@@ -1,5 +1,5 @@
 import React, {useState, useContext} from "react"
-import {FirebaseContext} from '../components/Firebase';
+import {FirebaseContext} from '../components/firebase';
 import { navigate } from "gatsby"
 
 const Login = () => {

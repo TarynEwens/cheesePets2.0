@@ -1,6 +1,6 @@
 import React, {useContext} from "react"
 import { Link, navigate } from "gatsby"
-import {FirebaseContext} from "./Firebase"
+import {FirebaseContext} from "./firebase"
 
 const Navigation = () => {
   const {firebase, user} = useContext(FirebaseContext);
