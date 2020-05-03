@@ -1,5 +1,5 @@
 import React from "react"
-import { FirebaseContext, useAuth} from '.firebase';
+import { FirebaseContext, useAuth} from './firebase';
 import Header from "../components/header"
 import Footer from "../components/footer"
 
