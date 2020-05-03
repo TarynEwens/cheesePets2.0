@@ -18,7 +18,7 @@ module.exports = {
         types: [
           {
             type: 'Pets',
-            collection: 'Pets',
+            collection: 'pets',
             map: doc => ({
               species: doc.species,
               name: doc.name,
@@ -26,6 +26,8 @@ module.exports = {
               hunger: doc.hunger,
               energy: doc.energy,
               fun: doc.fun,
+              createdAt: doc.createdAt,
+              user: doc.user
             }),
           },
           {
@@ -36,6 +38,7 @@ module.exports = {
               action: doc.action,
               image: doc.image,
               price: doc.price,
+              user: doc.user
             }),
           },
         ],

@@ -9,20 +9,20 @@ const Home = (props) => {
   );
 }
 
-export const query = graphql`
-{
-  allPets {
-    edges {
-      node {
-        id
-        energy
-        fun
-        happiness
-        hunger
-      }
-    }
-  }
-}
-`
+// export const query = graphql`
+// {
+//   allpets {
+//     edges {
+//       node {
+//         id
+//         energy
+//         fun
+//         happiness
+//         hunger
+//       }
+//     }
+//   }
+// }
+// `
 
 export default Home
