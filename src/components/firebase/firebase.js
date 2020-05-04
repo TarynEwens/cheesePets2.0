@@ -19,6 +19,15 @@ class Firebase {
     .onSnapshot(onSnapshot);
   }
 
+  async adoptPet({species, name}) {
+    console.log('adoptPet firebase function', species, name);
+    const adoptPetCallable = this.functions.httpsCallable('adoptPet');
+    return adoptPetCallable({
+      species,
+      name
+    });
+  }
+
   async register({email, password, username}) {
     await this.auth.createUserWithEmailAndPassword(email, password);
     const createProfileCallable = this.functions.httpsCallable('createPublicProfile');

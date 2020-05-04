@@ -6,13 +6,7 @@ const Adopt = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [formValues, setFormValues] = useState({
     species: '',
-    name: '',
-    energy: 30,
-    fun: 10,
-    happiness: 10,
-    hunger: 10,
-    createdAt: new Date(),
-    user: 'Test'
+    name: ''
   });
 
   function handleInputChange(e) {
@@ -28,6 +22,10 @@ const Adopt = () => {
     e.preventDefault();
     console.log('adopt form submitted');
     console.log(formValues);
+    firebase.adoptPet({
+      species: formValues.species,
+      name: formValues.name
+    });
   }
 
   return (
@@ -44,7 +42,7 @@ const Adopt = () => {
           <label htmlFor="rat"><input id="rat" type="radio" name="species" value="rat" onChange={handleInputChange}/>Rat</label>
           <label htmlFor="kitten"><input id="kitten" type="radio" name="species" value="kitten" onChange={handleInputChange}/>Unicorn Kitten</label>
         </fieldset>
-        <label htmlFor="name">Name your pet: <input id="name" name="name" type="text" placeholder="name" onChange={handleInputChange} required/></label>
+        <label htmlFor="name">Name your pet: <input id="name" name="name" type="text" placeholder="name" onChange={handleInputChange} value={formValues.name} required/></label>
         <button type="submit">
           Adopt your CheesePet
         </button>

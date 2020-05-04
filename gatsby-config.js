@@ -41,8 +41,8 @@ module.exports = {
               hunger: doc.hunger,
               energy: doc.energy,
               fun: doc.fun,
-              createdAt: doc.createdAt,
-              user: doc.user
+              dateCreated: doc.createdAt,
+              username: doc.user
             }),
           },
           {
@@ -52,8 +52,7 @@ module.exports = {
               name: doc.name,
               action: doc.action,
               image: doc.image,
-              price: doc.price,
-              user: doc.user
+              price: doc.price
             }),
           },
         ],
