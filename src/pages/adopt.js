@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react"
 import {FirebaseContext} from '../components/firebase'
+import { navigate } from "gatsby"
 
 const Adopt = () => {
   const {firebase} = useContext(FirebaseContext);
@@ -25,6 +26,11 @@ const Adopt = () => {
     firebase.adoptPet({
       species: formValues.species,
       name: formValues.name
+    }).catch(error => {
+      setErrorMessage(error.message);
+    }).then(() => {
+      console.log('navigating to pet page');
+      navigate('/pet')
     });
   }
 
