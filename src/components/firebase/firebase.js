@@ -19,6 +19,12 @@ class Firebase {
     .onSnapshot(onSnapshot);
   }
 
+  subscribeToPetData({username, onSnapshot}) {
+    return this.db.collection('pets')
+    .where('username', '==', username)
+    .onSnapshot(onSnapshot);
+  }
+
   async adoptPet({species, name}) {
     console.log('adoptPet firebase function', species, name);
     const adoptPetCallable = this.functions.httpsCallable('adoptPet');

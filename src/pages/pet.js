@@ -1,10 +1,11 @@
 import React from "react"
+import PetProfile from "../components/petProfile";
 
 const Pet = () => {
 
   return (
     <main>
-      <p>Your Pet Page!</p>
+        <PetProfile />
     </main>
   );
 }
