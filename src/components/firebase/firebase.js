@@ -20,8 +20,9 @@ class Firebase {
   }
 
   subscribeToPetData({username, onSnapshot}) {
+    const userRef = this.db.collection('publicProfiles').doc(username);
     return this.db.collection('pets')
-    .where('username', '==', username)
+    .where('username', '==', userRef)
     .onSnapshot(onSnapshot);
   }
 
