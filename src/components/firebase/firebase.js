@@ -26,11 +26,21 @@ class Firebase {
   }
 
   async adoptPet({species, name}) {
-    console.log('adoptPet firebase function', species, name);
     const adoptPetCallable = this.functions.httpsCallable('adoptPet');
     return adoptPetCallable({
       species,
       name
+    });
+  }
+
+  async updatePet({id, hunger, happiness, energy, fun}) {
+    const updatePetCallable = this.functions.httpsCallable('updatePet');
+    return updatePetCallable({
+      id,
+      hunger,
+      happiness,
+      energy,
+      fun,
     });
   }
 

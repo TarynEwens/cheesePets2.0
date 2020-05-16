@@ -4,7 +4,6 @@ import {FirebaseContext} from "./firebase"
 
 const Navigation = () => {
   const {firebase, user} = useContext(FirebaseContext);
-  console.log('navigation', user);
 
   function handleLogoutClick() {
     firebase.logout().then(() => navigate('/login'));
