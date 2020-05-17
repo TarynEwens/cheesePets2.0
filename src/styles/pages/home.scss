@@ -1,0 +1,30 @@
+.home {
+  background: url('../../static/backgrounds/background__home.jpg');
+  min-height: 75vh;
+  background-size: cover;
+}
+
+.home > p {
+  margin-top: 0;
+}
+
+.home__pug {
+  max-width: 10rem;
+  margin-left: 50%;
+  transform: translateY(-2rem);
+}
+
+.home__axolotl {
+  max-width: 8rem;
+  transform: translateY(2rem);
+}
+
+.home__textArea {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem 1.5rem;
+}
+
+.home__textArea .button {
+  margin: 2rem 0;
+  display: block;
+}

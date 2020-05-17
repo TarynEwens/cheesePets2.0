@@ -4,9 +4,9 @@ import PetProfile from "../components/petProfile";
 const Pet = () => {
 
   return (
-    <main>
+    <>
         <PetProfile />
-    </main>
+    </>
   );
 }
 

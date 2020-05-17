@@ -35,7 +35,7 @@ const Adopt = () => {
   }
 
   return (
-    <main>
+    <>
       <p>Welcome to the adoption centre!</p>
       <form onSubmit={handleSubmit}>
         {!!errorMessage &&
@@ -53,7 +53,7 @@ const Adopt = () => {
           Adopt your CheesePet
         </button>
       </form>
-    </main>
+    </>
   );
 }
 

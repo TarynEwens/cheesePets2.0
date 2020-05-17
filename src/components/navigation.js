@@ -1,6 +1,7 @@
 import React, {useContext} from "react"
 import { Link, navigate } from "gatsby"
 import {FirebaseContext} from "./firebase"
+import logo from '../../static/cheesePetsLogo_01.png';
 
 const Navigation = () => {
   const {firebase, user} = useContext(FirebaseContext);
@@ -10,10 +11,23 @@ const Navigation = () => {
   }
 
   return (
-    <>
+    <section className={'nav'}>
+      <div className={'nav__emptyContent nav__column'}></div>
+      <Link to="/" className={'nav__logo nav__column'}>
+          <img
+          src={logo}
+          alt={'CheesePets'}
+          aria-label={'Cheese Pets'}
+        />
+      </Link>
       <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
+        <ul className={'nav__links nav__column'}>
+          {!!user && !!user.email &&
+            <>
+              <li><Link to="/pet">My Pet</Link></li>
+              <li><Link to="/games">Games</Link></li>
+            </>
+          }
           {(!user || !user.email) &&
             <>
               <li><Link to="/login">Login</Link></li>
@@ -22,22 +36,12 @@ const Navigation = () => {
           }
           {!!user && !!user.email &&
             <>
-              <li><Link to="/pet">My Pet</Link></li>
-              <li><Link to="/games">Games</Link></li>
-              <li><button onClick={handleLogoutClick}>Logout</button></li>
+              <li><button className={"button"} onClick={handleLogoutClick}>Logout</button></li>
             </>
           }
         </ul>
       </nav>
-      <div>
-        {!!user && !!user.email &&
-        <div>
-          <p>Hello {user.username || user.email}!</p>
-        </div>
-        }
-        <hr/>
-      </div>
-    </>
+    </section>
   )
 }
 

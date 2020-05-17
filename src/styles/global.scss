@@ -1,13 +1,80 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
 
+// Components
+@import './components/header';
+@import './components/footer';
+
+// Pages
+@import './pages/home';
+
 body {
   background-color: #fffffe;
   color: var(--textStandard);
   font-family: 'Open Sans', sans-serif;
+  margin: 0;
 
   /* Colours */
   --textStandard: #2e2e2e;
-  --highlight: #4fc4cf;
-  --secondary: #994ff3;
-  --blueLight: #fbdd74;
+  --highlight: #ffd803;
+  --secondary: #bae8e8;
+  --tertiary: #e3f6f5;
+}
+
+.content {
+  margin: 0 1rem;
+
+  @media only screen and (min-width: 960px) {
+    width: 960px;
+    margin: 0 auto;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
+
+.button {
+  border: 0;
+  border-radius: 0.25rem;
+  background: var(--secondary);
+  color: var(--textStandard);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button:hover,
+.button:focus {
+    background: var(--highlight);
+}
+
+.button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.button:active {
+    transform: scale(0.99);
+}
+
+
+
+.button--cta {
+  background: var(--highlight);
+  color: var(--textStandard);
+  padding: 0.75rem 0.5rem;
+}
+
+.button--cta:hover,
+.button--cta:focus {
+    background: var(--secondary);
 }

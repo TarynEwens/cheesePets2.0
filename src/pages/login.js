@@ -27,7 +27,7 @@ const Login = () => {
   }
 
   return (
-    <main>
+    <>
       <p>Login Page!</p>
       <form onSubmit={handleSubmit}>
         {!!errorMessage &&
@@ -42,7 +42,7 @@ const Login = () => {
           Login
         </button>
       </form>
-    </main>
+    </>
   );
 }
 

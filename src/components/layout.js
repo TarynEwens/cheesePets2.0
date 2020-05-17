@@ -9,7 +9,7 @@ const Layout = ({children}) => {
     return (
       <FirebaseContext.Provider value={{user, firebase, loading}}>
         <Header/>
-        <main id="contentArea" className="content contentArea">
+        <main id="contentArea">
             {children}
         </main>
         <Footer/>

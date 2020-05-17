@@ -42,7 +42,7 @@ const Register = () => {
   }
 
   return (
-    <main>
+    <>
       <p>Registration Page!</p>
       <form onSubmit={handleSubmit}>
         {!!errorMessage &&
@@ -61,8 +61,7 @@ const Register = () => {
           Sign up for CheesePets
         </button>
       </form>
-
-    </main>
+    </>
   );
 }
 
