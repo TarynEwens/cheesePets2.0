@@ -12,19 +12,34 @@
   max-width: 10rem;
   margin-left: 50%;
   transform: translateY(-2rem);
+
+  @media only screen and (min-width: 1060px) {
+    max-width: 14rem;
+    transform: translateX(13rem) translateY(-5rem);
+  }
 }
 
 .home__axolotl {
   max-width: 8rem;
   transform: translateY(2rem);
+
+  @media only screen and (min-width: 1060px) {
+    max-width: 14rem;
+    transform: translateX(5rem) translateY(3rem);
+  }
 }
 
 .home__textArea {
   background: rgba(255, 255, 255, 0.95);
   padding: 2rem 1.5rem;
+
+  @media only screen and (min-width: 1060px) {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
 }
 
 .home__textArea .button {
-  margin: 2rem 0;
+  margin: 2rem auto;
   display: block;
 }
