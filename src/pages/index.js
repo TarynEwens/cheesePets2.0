@@ -2,11 +2,16 @@ import React from "react"
 import { Link } from "gatsby"
 import pug from '../../static/pets/pug_01.png';
 import axolotl from '../../static/pets/axolotl_01.png';
-
+import { Helmet } from "react-helmet"
 
 const Home = (props) => {
   return (
     <section className={"home"}>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>CheesePets: Home</title>
+          <html lang="en" />
+        </Helmet>
       <div className={'content'}>
         <img
           src={axolotl}

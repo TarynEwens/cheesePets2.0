@@ -73,6 +73,7 @@ const PetProfile = () => {
   if (petData[0]) {
     return (
       <section>
+        <h2>Your Pets Profile</h2>
         <div>
           <p>Name: {petData[0].name}</p>
           <p>Species: {petData[0].species}</p>

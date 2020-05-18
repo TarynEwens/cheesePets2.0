@@ -13,13 +13,15 @@ const Navigation = () => {
   return (
     <section className={'nav'}>
       <div className={'nav__emptyContent nav__column'}></div>
-      <Link to="/" className={'nav__logo nav__column'}>
-          <img
-          src={logo}
-          alt={'CheesePets'}
-          aria-label={'Cheese Pets'}
-        />
-      </Link>
+      <h1>
+        <Link to="/" className={'nav__logo nav__column'}>
+            <img
+            src={logo}
+            alt={'CheesePets'}
+            aria-label={'Cheese Pets'}
+          />
+        </Link>
+      </h1>
       <nav>
         <ul className={'nav__links nav__column'}>
           {!!user && !!user.email &&

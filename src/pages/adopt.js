@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react"
 import {FirebaseContext} from '../components/firebase'
 import { navigate } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const Adopt = () => {
   const {firebase} = useContext(FirebaseContext);
@@ -36,7 +37,12 @@ const Adopt = () => {
 
   return (
     <>
-      <p>Welcome to the adoption centre!</p>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CheesePets: Adopt a pet</title>
+        <html lang="en" />
+      </Helmet>
+      <h2>Welcome to the CheeseLand Adoption Centre!</h2>
       <form onSubmit={handleSubmit}>
         {!!errorMessage &&
           <p id="errors" role="alert" aria-atomic="true" className="form__errorMessage">Error: {errorMessage}</p>

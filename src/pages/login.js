@@ -1,6 +1,7 @@
 import React, {useState, useContext} from "react"
 import {FirebaseContext} from '../components/firebase';
 import { navigate } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const Login = () => {
   const [formValues, setFormValues] = useState({email: '', password: ''});
@@ -28,7 +29,12 @@ const Login = () => {
 
   return (
     <>
-      <p>Login Page!</p>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>CheesePets: Login</title>
+        <html lang="en" />
+      </Helmet>
+      <h2>Log in to look after your CheesePet</h2>
       <form onSubmit={handleSubmit}>
         {!!errorMessage &&
           <p id="errors" role="alert" aria-atomic="true" class="form__errorMessage">Error: {errorMessage}</p>
