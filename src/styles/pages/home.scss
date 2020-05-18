@@ -13,7 +13,7 @@
   margin-left: 50%;
   transform: translateY(-2rem);
 
-  @media only screen and (min-width: 1060px) {
+  @media only screen and (min-width: 960px) {
     max-width: 14rem;
     transform: translateX(13rem) translateY(-5rem);
   }
@@ -23,7 +23,7 @@
   max-width: 8rem;
   transform: translateY(2rem);
 
-  @media only screen and (min-width: 1060px) {
+  @media only screen and (min-width: 960px) {
     max-width: 14rem;
     transform: translateX(5rem) translateY(3rem);
   }
@@ -33,7 +33,7 @@
   background: rgba(255, 255, 255, 0.95);
   padding: 2rem 1.5rem;
 
-  @media only screen and (min-width: 1060px) {
+  @media only screen and (min-width: 960px) {
     max-width: 34rem;
     margin: 0 auto;
   }
