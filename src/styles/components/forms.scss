@@ -5,6 +5,7 @@ label {
 }
 
 input {
+  border: 1px solid var(--textStandard);
   display: block;
   margin-top: 0.5rem;
   width: 100%;
@@ -21,9 +22,14 @@ input {
 }
 
 fieldset {
+  border: 0;
   padding-bottom: 1rem;
 }
 
 form {
+  background: rgba(255, 255, 255, 0.95);
   margin-bottom: 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: 4px;
+  padding-top: 2rem;
 }
