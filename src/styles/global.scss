@@ -3,9 +3,12 @@
 // Components
 @import './components/header';
 @import './components/footer';
+@import './components/buttons';
+@import './components/forms';
 
 // Pages
 @import './pages/home';
+@import './pages/registration';
 
 body {
   background-color: #fffffe;
@@ -35,47 +38,4 @@ body {
 
 .show {
   display: inline-block;
-}
-
-.button {
-  border: 0;
-  border-radius: 0.25rem;
-  background: var(--secondary);
-  color: var(--textStandard);
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
-  line-height: 1;
-  white-space: nowrap;
-  text-decoration: none;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-  text-align: center;
-}
-
-.button:hover,
-.button:focus {
-    background: var(--highlight);
-}
-
-.button:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-}
-
-.button:active {
-    transform: scale(0.99);
-}
-
-
-
-.button--cta {
-  background: var(--highlight);
-  color: var(--textStandard);
-  padding: 0.75rem 0.5rem;
-  max-width: 19rem;
-}
-
-.button--cta:hover,
-.button--cta:focus {
-    background: var(--secondary);
 }

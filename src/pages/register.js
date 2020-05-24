@@ -43,31 +43,40 @@ const Register = () => {
   }
 
   return (
-    <>
+    <section className={"registration"}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>CheesePets: Sign up</title>
         <html lang="en" />
       </Helmet>
-      <h2>Sign up for an account to adopt a CheesePet</h2>
-      <form onSubmit={handleSubmit}>
-        {!!errorMessage &&
-          <p id="errors" role="alert" aria-atomic="true" className="form__errorMessage">Error: {errorMessage}</p>
-        }
-        <p>Note: all fields are required</p>
-        <label htmlFor="username">Your username:</label>
-        <input id="username" onChange={handleInputChange} value={formValues.username} name="username" type="text" placeholder="username" required/>
-        <label htmlFor="email">Your email:</label>
-        <input id="email" onChange={handleInputChange} value={formValues.email} name="email" type="email" placeholder="email" required/>
-        <label htmlFor="password">Create password:</label>
-        <input id="password" onChange={handleInputChange} value={formValues.password}name="password" type="password" placeholder="password" required minLength={5}/>
-        <label htmlFor="confirmPassword">Confirm password:</label>
-        <input id="confirmPassword" onChange={handleInputChange} value={formValues.confirmPassword}name="confirmPassword" type="password" placeholder="Confirm password" required minLength={5}/>
-        <button type="submit">
-          Sign up for CheesePets
-        </button>
-      </form>
-    </>
+      <div className={'registrationContent'}>
+        <h2>Sign up for an account to adopt a CheesePet!</h2>
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <legend>Please enter your login details:</legend>
+            {!!errorMessage &&
+              <p id="errors" role="alert" aria-atomic="true" className="form__errorMessage">Error: {errorMessage}</p>
+            }
+            <p><strong>Note:</strong> all fields are required</p>
+            <label htmlFor="username">Your username:
+              <input id="username" onChange={handleInputChange} value={formValues.username} name="username" type="text" placeholder="username" required/>
+            </label>
+            <label htmlFor="email">Your email:
+              <input id="email" onChange={handleInputChange} value={formValues.email} name="email" type="email" placeholder="email" required/>
+            </label>
+            <label htmlFor="password">Create password:
+              <input id="password" onChange={handleInputChange} value={formValues.password}name="password" type="password" placeholder="password" required minLength={5}/>
+            </label>
+            <label htmlFor="confirmPassword">Confirm password:
+              <input id="confirmPassword" onChange={handleInputChange} value={formValues.confirmPassword}name="confirmPassword" type="password" placeholder="Confirm password" required minLength={5}/>
+            </label>
+            <button type="submit" className={"button button--cta button--center"}>
+              Sign up for CheesePets
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
   );
 }
 

@@ -28,27 +28,34 @@ const Login = () => {
   }
 
   return (
-    <>
+    <section className={"registration"}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>CheesePets: Login</title>
         <html lang="en" />
       </Helmet>
-      <h2>Log in to look after your CheesePet</h2>
-      <form onSubmit={handleSubmit}>
-        {!!errorMessage &&
-          <p id="errors" role="alert" aria-atomic="true" class="form__errorMessage">Error: {errorMessage}</p>
-        }
-        <p>Note: all fields are required</p>
-        <label htmlFor="email">Your email*:</label>
-        <input value={formValues.email} id="email" name="email" onChange={handleInputChange} type="email" placeholder="email" required/>
-        <label htmlFor="password">Your password*:</label>
-        <input value={formValues.password} id="password" name="password" onChange={handleInputChange} type="password" placeholder="password" required/>
-        <button type="submit">
-          Login
-        </button>
-      </form>
-    </>
+      <div className={'registrationContent'}>
+        <h2>Returning to look after your CheesePet?</h2>
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <legend>Please enter your login details:</legend>
+            {!!errorMessage &&
+              <p id="errors" role="alert" aria-atomic="true" className={"form__errorMessage"}>Error: {errorMessage}</p>
+            }
+            <p><strong>Note:</strong> all fields are required</p>
+            <label htmlFor="email">Your email:
+              <input value={formValues.email} id="email" name="email" onChange={handleInputChange} type="email" placeholder="email" required/>
+            </label>
+            <label htmlFor="password">Your password:
+              <input value={formValues.password} id="password" name="password" onChange={handleInputChange} type="password" placeholder="password" required/>
+            </label>
+            <button type="submit" className={"button button--cta button--center"}>
+              Login
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </section>
   );
 }
 

@@ -1,0 +1,29 @@
+label {
+  display: block;
+  margin: 2rem 0;
+
+}
+
+input {
+  display: block;
+  margin-top: 0.5rem;
+  width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
+  height: 1.5rem;
+
+  @media only screen and (min-width: 960px) {
+    display: inline-block;
+    margin-left: 1rem;
+    width: 20rem;
+  }
+}
+
+fieldset {
+  padding-bottom: 1rem;
+}
+
+form {
+  margin-bottom: 1rem;
+}

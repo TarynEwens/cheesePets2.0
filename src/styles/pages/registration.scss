@@ -1,0 +1,20 @@
+.registration {
+  background: url('../../static/backgrounds/background__home.jpg');
+  background-size: cover;
+  min-height: 60vh;
+  padding: 4rem 1rem;
+}
+
+.registrationContent {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.5rem;
+
+  @media only screen and (min-width: 960px) {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+}
+
+.registrationContent h2 {
+  margin-bottom: 3rem;
+}
