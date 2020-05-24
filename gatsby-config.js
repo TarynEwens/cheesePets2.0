@@ -7,7 +7,7 @@ module.exports = {
     title: `CheesePets 2.0`,
     author: `Taryn Ewens`,
     description: `A virtual pet website.`,
-    siteUrl: `http://localhost:8000`,
+    siteUrl: `https://cheesepets.taryn.codes`,
   },
   plugins: [
     `gatsby-transformer-sharp`,

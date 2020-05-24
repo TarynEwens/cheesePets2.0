@@ -5,7 +5,8 @@
   padding: 4rem 1rem;
 }
 
-.registrationContent {
+.registration__content {
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.95);
   padding: 1rem 1.5rem;
 
@@ -15,6 +16,6 @@
   }
 }
 
-.registrationContent h2 {
+.registration__content h2 {
   margin-bottom: 3rem;
 }

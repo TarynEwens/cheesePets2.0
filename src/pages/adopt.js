@@ -49,13 +49,13 @@ const Adopt = () => {
         }
         <fieldset>
           <legend>Choose a pet:</legend>
-          <label htmlFor="puppy"><input id="puppy" type="radio" name="species" value="puppy" onChange={handleInputChange}/> Pug puppy</label>
-          <label htmlFor="axolotl"><input id="axolotl" type="radio" name="species" value="axolotl" onChange={handleInputChange}/>Axolotl</label>
-          <label htmlFor="rat"><input id="rat" type="radio" name="species" value="rat" onChange={handleInputChange}/>Rat</label>
-          <label htmlFor="kitten"><input id="kitten" type="radio" name="species" value="kitten" onChange={handleInputChange}/>Unicorn Kitten</label>
+          <label htmlFor="puppy"><input id="puppy" type="radio" name="species" value="Puppy" onChange={handleInputChange}/> Pug</label>
+          <label htmlFor="axolotl"><input id="axolotl" type="radio" name="species" value="Axolotl" onChange={handleInputChange}/>Axolotl</label>
+          <label htmlFor="rat"><input id="rat" type="radio" name="species" value="Rat" onChange={handleInputChange}/>Rat</label>
+          <label htmlFor="kitten"><input id="kitten" type="radio" name="species" value="Kitten" onChange={handleInputChange}/>Kitten</label>
         </fieldset>
         <label htmlFor="name">Name your pet: <input id="name" name="name" type="text" placeholder="name" onChange={handleInputChange} value={formValues.name} required/></label>
-        <button type="submit">
+        <button type="submit" className={"button button--cta"}>
           Adopt your CheesePet
         </button>
       </form>

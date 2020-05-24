@@ -49,7 +49,7 @@ const Register = () => {
         <title>CheesePets: Sign up</title>
         <html lang="en" />
       </Helmet>
-      <div className={'registrationContent'}>
+      <div className={'registration__content'}>
         <h2>Sign up for an account to adopt a CheesePet!</h2>
         <form onSubmit={handleSubmit}>
           <fieldset>

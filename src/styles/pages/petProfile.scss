@@ -1,0 +1,111 @@
+.petProfile {
+  background: url('../../static/backgrounds/background__home.jpg');
+  background-size: cover;
+  min-height: 60vh;
+  padding: 4rem 1rem;
+}
+
+.petProfile__content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+
+  @media only screen and (min-width: 960px) {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+}
+
+.petProfile__content h2 {
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.petProfile__content p {
+  text-align: center;
+}
+
+.petProfile__interactions {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+}
+
+.petProfile .button {
+  min-width: 12rem;
+  margin: 1rem;
+
+  @media only screen and (min-width: 600px) {
+    display: block;
+  }
+}
+
+.petProfile__stats {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--secondary);
+  border-radius: 4px;
+  list-style: none;
+
+  @media only screen and (min-width: 600px) {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+
+.petProfile__stats li {
+  margin: 0.5rem 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.petProfile__values {
+  margin-left: auto;
+
+  @media only screen and (min-width: 600px) {
+    font-size: 0.85rem;
+    margin-left: 0;
+  }
+}
+
+.petProfile__stat {
+  margin-left: 0.5rem;
+  font-weight: bold;
+
+  @media only screen and (min-width: 600px) {
+    margin-left: 0;
+  }
+}
+
+.petProfile__stat--low {
+  color: #CC0000;
+}
+
+.petProfile__stat--lowMedium {
+  color: #9F07B5;
+}
+
+.petProfile__stat--mediumHigh {
+  color: #006AB2;
+}
+
+.petProfile__stat--high {
+  color: #008A00;
+}
+
+.petProfile__image {
+  max-height: 10rem;
+  max-width: 10rem;
+  margin: 0 auto;
+  display: block;
+}

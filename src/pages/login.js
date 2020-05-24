@@ -34,7 +34,7 @@ const Login = () => {
         <title>CheesePets: Login</title>
         <html lang="en" />
       </Helmet>
-      <div className={'registrationContent'}>
+      <div className={'registration__content'}>
         <h2>Returning to look after your CheesePet?</h2>
         <form onSubmit={handleSubmit}>
           <fieldset>
