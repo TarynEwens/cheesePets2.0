@@ -1,0 +1,87 @@
+.adoption__content {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+
+  @media only screen and (min-width: 960px) {
+    max-width: 55rem;
+    margin: 0 auto;
+  }
+}
+
+.adoption__form > fieldset {
+  width: 100%;
+  display: flex;
+
+}
+
+.adoption__form > fieldset > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 960px) {
+    flex-direction: row;
+  }
+}
+
+.adoption__form legend {
+  text-align: center;
+}
+
+.adoption__form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.adoption__form .petProfile__image {
+  margin-top: 2rem;
+}
+
+.adoption__radioButton {
+  display: inline-block;
+  margin: 0 0.75rem 0 0;
+}
+
+.adoption__label {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem;
+  border-bottom: 1px solid var(--textStandard);
+  padding-bottom: 2rem;
+
+  @media only screen and (min-width: 960px) {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+.adoption__label > span > input {
+  width: auto;
+}
+
+.adoption__label > span {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.adoption__nameLabel {
+  width: 100%;
+  margin-top: 1rem;
+
+  @media only screen and (min-width: 960px) {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.adoption__image {
+  height: 9rem;
+}
