@@ -5,14 +5,12 @@
 import React, {useEffect, useContext, useState} from "react";
 import {FirebaseContext} from "../components/firebase"
 
-// images
-import axolotl from '../../static/pets/axolotl_01.png';
-
 const PetProfile = () => {
   const {firebase, user} = useContext(FirebaseContext);
   const [petStatus, setPetStatus] = useState('"Hello!"');
-
   const [petData, setPetData] = useState([]);
+  const [petImage, setPetImage] = useState('');
+  const [initialLoadFlag, setInitialLoadFlag] = useState('');
 
   useEffect(() => {
     if (firebase && user) {
@@ -27,6 +25,10 @@ const PetProfile = () => {
             })
           })
           setPetData(snapshotPetData);
+          if (initialLoadFlag === '') {
+            setInitialLoadFlag('loaded');
+            updatePetImage('neutral', snapshotPetData);
+          }
         }
       })
 
@@ -37,10 +39,18 @@ const PetProfile = () => {
       }
     }
 
-  }, [firebase, user]);
+  }, [firebase, user, initialLoadFlag]);
+
+  const updatePetImage = (action, data) => {
+    if (!data[0]) {
+      return;
+    }
+    setPetImage(`/pets/${data[0].species}_${action}.png`)
+  }
 
   const napTime = () => {
     if (petData[0].energy <= 35) {
+      updatePetImage('nap', petData);
       setPetStatus('ZzzzzZzzzzZzzzz');
       firebase.updatePet({
         id: petData[0].id,
@@ -52,12 +62,14 @@ const PetProfile = () => {
         setPetStatus('No thanks, not right now.');
       })
     } else {
+      updatePetImage('neutral', petData);
       setPetStatus("Nooo, I don't want a nap! I'm not tired!");
     }
   }
 
   const hugPet = () => {
     if (petData[0].happiness <= 35) {
+      updatePetImage('happiness', petData);
       setPetStatus("Yay hugs! I feel so happy!")
       firebase.updatePet({
         id: petData[0].id,
@@ -69,6 +81,7 @@ const PetProfile = () => {
         setPetStatus('No thanks, not right now.');
       })
     } else {
+      updatePetImage('neutral', petData);
       setPetStatus("Plz don't touch me, I'm fine!");
     }
   }
@@ -121,7 +134,7 @@ const PetProfile = () => {
           <h2>{petData[0].name} the {petData[0].species}</h2>
           <p><strong>Adopted by:</strong> {user.username}</p>
           <img
-            src={axolotl}
+            src={petImage}
             alt={`Cartoon ${petData[0].species}`}
             className={"petProfile__image"}
           />
