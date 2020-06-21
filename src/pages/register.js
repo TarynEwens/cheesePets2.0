@@ -1,10 +1,10 @@
-import React, {useState, useContext} from "react"
+import React, {useEffect, useContext, useState} from "react";
 import {FirebaseContext} from '../components/firebase'
 import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
 
 const Register = () => {
-  const {firebase} = useContext(FirebaseContext);
+  const {firebase, user} = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');
   const [formValues, setFormValues] = useState({
     email: '',
@@ -12,6 +12,13 @@ const Register = () => {
     confirmPassword: '',
     username: ''
   });
+
+  useEffect(() => {
+    if (user) {
+      console.log('already logged in - navigating to pet page');
+        navigate('/pet')
+      }
+  }, [user]);
 
   function handleInputChange(e) {
     e.persist();
