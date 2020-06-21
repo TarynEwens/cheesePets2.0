@@ -131,7 +131,7 @@ const PetProfile = () => {
     return `petProfile__stat--${getRange(number)}`
   }
 
-  if (petData[0]) {
+  if (petData[0] && user) {
     return (
       <section className={"petProfile"}>
         <div className={"petProfile__content"}>
