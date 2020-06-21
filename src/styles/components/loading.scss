@@ -1,0 +1,51 @@
+.loading__text {
+  text-align: center;
+}
+
+.loading__cheeseGroup {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loading__cheese {
+  width: 3rem;
+  margin: 0.75rem;
+  animation: danceCheese 3s infinite;
+}
+
+.loading__cheese:nth-of-type(2) {
+  width: 4rem;
+  animation: danceCheeseSecond 3s infinite;
+}
+
+
+@keyframes danceCheese {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+
+	50% {
+    transform: rotate(-45deg) scale(1.25);
+	}
+
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes danceCheeseSecond {
+  0% {
+    transform: rotate(45deg) scale(1.25);
+  }
+
+	50% {
+    transform: rotate(-45deg) scale(0.75);
+	}
+
+  100% {
+    transform: rotate(45deg) scale(1.25);
+  }
+}
+
+
