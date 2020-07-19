@@ -1,17 +1,43 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useEffect } from "react"
 import { FirebaseContext } from "../components/firebase"
 import { navigate } from "gatsby"
 import { Helmet } from "react-helmet"
 import Loading from "../components/loading"
+import { Link } from "gatsby"
 
 const Adopt = () => {
-  const { firebase } = useContext(FirebaseContext)
+  const { firebase, user } = useContext(FirebaseContext)
   const [errorMessage, setErrorMessage] = useState("")
   const [goToPet, setGoToPet] = useState(false)
+  const [petData, setPetData] = useState([])
   const [formValues, setFormValues] = useState({
     species: "",
     name: "",
   })
+
+  useEffect(() => {
+    if (firebase && user) {
+      const unsubscribe = firebase.subscribeToPetData({
+        username: user.username,
+        onSnapshot: snapshot => {
+          const snapshotPetData = []
+          snapshot.forEach(doc => {
+            snapshotPetData.push({
+              id: doc.id,
+              ...doc.data(),
+            })
+          })
+          setPetData(snapshotPetData)
+        },
+      })
+
+      return () => {
+        if (unsubscribe) {
+          unsubscribe()
+        }
+      }
+    }
+  }, [firebase, user])
 
   function handleInputChange(e) {
     e.persist()
@@ -46,6 +72,14 @@ const Adopt = () => {
       <section className={"petProfile"}>
         <div className={"petProfile__content"}>
           <Loading text="Please wait while we get your CheesePet ready." />
+        </div>
+      </section>
+    )
+  } else if (petData[0] && user) {
+    return (
+      <section className={"petProfile"}>
+        <div className={"petProfile__content"}>
+          <p>Wait a minute... you already have a <Link to="/pet">CheesePet</Link>! Don't be greedy!</p>
         </div>
       </section>
     )
