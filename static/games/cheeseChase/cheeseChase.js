@@ -14,7 +14,7 @@ let ctx = canvas.getContext("2d");
 let bgReady = false;
 let bgImage = new Image();
 
-bgImage.src = "/games/cheeseChase/confetti_pattern_12.jpg";
+bgImage.src = "/backgrounds/background__summer.jpg";
 
 bgImage.onload = function () {
 	bgReady = true;
@@ -48,11 +48,13 @@ let cheesesCaught = 0;
 let keysDown = {};
 
 addEventListener("keydown", function (e) {
-	keysDown[e.keyCode] = true;
+  keysDown[e.keyCode] = true;
+  e.preventDefault();
 }, false);
 
 addEventListener("keyup", function (e) {
-	delete keysDown[e.keyCode];
+  delete keysDown[e.keyCode];
+  e.preventDefault();
 }, false);
 
 // Reset the game when the player catches a cheese
