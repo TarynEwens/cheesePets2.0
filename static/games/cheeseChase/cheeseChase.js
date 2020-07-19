@@ -2,16 +2,24 @@ console.log('test');
 
   // Create the canvas
 const canvas = document.getElementById("cheeseChase");
+canvas.width = window.innerWidth - (window.innerWidth * .25);
+if (canvas.width > 800) {
+  canvas.width = 800;
+}
+canvas.height = 300;
 console.log(document.getElementById("cheeseChase"));
 let ctx = canvas.getContext("2d");
 
 // Background image
 let bgReady = false;
 let bgImage = new Image();
+
+bgImage.src = "/games/cheeseChase/confetti_pattern_12.jpg";
+
 bgImage.onload = function () {
 	bgReady = true;
 };
-bgImage.src = "/games/cheeseChase/background-poly.png";
+
 
 // Hero image
 let petReady = false;
@@ -62,13 +70,13 @@ let update = function (modifier) {
 	if (38 in keysDown && pet.y >= 5) { // Player holding up
 		pet.y -= pet.speed * modifier;
 	}
-  if (40 in keysDown && pet.y <= 440) { // Player holding down
+  if (40 in keysDown && pet.y <= canvas.height - 40) { // Player holding down
 		pet.y += pet.speed * modifier;
 	}
 	if (37 in keysDown && pet.x >= 5) { // Player holding left
 		pet.x -= pet.speed * modifier;
 	}
-	if (39 in keysDown&& pet.x <= 470) { // Player holding right
+	if (39 in keysDown&& pet.x <= canvas.width - 40) { // Player holding right
 		pet.x += pet.speed * modifier;
 	}
 
@@ -87,7 +95,9 @@ let update = function (modifier) {
 // Draw everything
 let render = function () {
 	if (bgReady) {
-		ctx.drawImage(bgImage, 0, 0);
+		let ptrn = ctx.createPattern(bgImage, 'repeat'); // Create a pattern with this image, and set it to "repeat".
+    ctx.fillStyle = ptrn;
+    ctx.fillRect(0, 0, canvas.width, canvas.height); // context.fillRect(x, y, width, height);
 	}
 
 	if (petReady) {
@@ -96,7 +106,7 @@ let render = function () {
 
 	if (cheeseReady) {
 		ctx.drawImage(cheeseImage, cheese.x, cheese.y);
-	}
+  }
 
 	// Score
 	ctx.fillStyle = "rgb(50, 50, 50)";

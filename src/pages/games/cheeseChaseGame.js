@@ -17,7 +17,7 @@ const CheeseChaseGame = () => {
           <h2>CheeseChase</h2>
           <p>Use the arrow keys to move Bobbles the Pug and help her catch us much cheese as possible before time runs out!</p>
           <div className={"gameArea"}>
-          <canvas id="cheeseChase" width="512" height="480"></canvas>
+          <canvas id="cheeseChase"></canvas>
           <button className={"button button--cta"}>Play again!</button>
         </div>
         </div>
